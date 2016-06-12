@@ -36,30 +36,3 @@ if(isset($_POST['title'], $_POST['content'], $_POST['category']))
 
 
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-
-<body>
-	<h1><u>Add your Post</u></h1>
-	<form method="post" action="add_post.php">
-		<label>Title</label>
-		<br>
-		<input type= "text" name="title">
-		<br>
-		<label>Content</label>
-		<br>
-		<textarea name="content" rows="10" cols="50"></textarea>
-		<br>
-		<label>Category</label>
-		<br>
-		<input type="text" name="category">
-		<br>
-		<br>
-		<input type="submit" value="Submit">
-	</form>
-</body>
-</html>
