@@ -1,21 +1,19 @@
 <?php
 
+include_once("config.php");
+
 function add_post($title, $content,$category)
 {
-$date = date("m/d/Y h:i:s ", time());
-
-$sql = "INSERT INTO posts VALUES (NULL,'$title','$content', '$category', '$date')";
-$query_run = mysql_query( $sql);
-
-if(! $query_run ) 
-{
-echo "Could not add the post successfully";
+	$date = date("m/d/Y h:i:s ", time());
+	$sql = "INSERT INTO posts VALUES (NULL,'$title','$content', '$category', '$date')";
+	$query_run = mysql_query( $sql);
+	if(! $query_run ) 
+	{
+		echo "Could not add the post successfully".mysql_error();
+	}
+	else
+	{
+		echo "Post added successfully";
+	}
 }
-else
-{
-echo "Post added successfully";
-}
-
-}
-
 ?>
