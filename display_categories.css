@@ -1,0 +1,21 @@
+body
+{
+	background-image: url("ios-linen.jpg");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.ulstyle
+{
+list-style-type:none; 
+float:left;
+display:inline;
+}
+
+.ulstyle_li
+{
+float:left ; 
+display:inline;
+}
