@@ -1,22 +1,31 @@
 <?php
 
-$db_host = 'localhost';
-$db_user = 'root';
-$db_password = '';
+$host = 'localhost';
+$user = 'root';
+$password = '';
 
-$conn = mysql_connect($db_host, $db_user,$db_password);
-
-mysql_select_db(blog);
-
-if($conn)
+if(mysql_connect($host, $user, $password))
 {
-echo "<b>Connected Successfully</b><br>";
+	echo "Connection established";
 }
 else
 {
-echo "Could not connect";
+	echo "Connection Failed";
 }
 
-include_once("blog.php");
+$conn = mysql_select_db(blog);
+
+if($conn)
+{
+	echo "Connected to database successfully";
+}
+
+else
+{
+	echo "Could not connect to database".mysql_error();
+}
+
+include_once("blog_main.php");
+
 
 ?>
