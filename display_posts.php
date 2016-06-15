@@ -38,7 +38,7 @@ while($row = mysql_fetch_assoc($query_run))
 	<body>
 		<br>
 		<div id = 'post'>
-			<h2 align='center'><u>".$title."</u></h2><br><div id='post_inner'>".$contents."</div><br><h4>Category : ".$category."</h4>Date Posted on :".$date."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=edit_post.php?id=$id>Edit Post</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<h2 align='center'><u>".$title."</u></h2><br><div id='post_inner'>".$contents."</div><br><h4>Category : ".$category."</h4>Date Posted on :".$date."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=edit_post.php?title=$title&id=$id&category=$category>Edit Post</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<a href=delete_post.php?item=$id>Delete Post</a></div>
 		</body>
 		</html>"
