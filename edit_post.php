@@ -5,10 +5,18 @@
 
 include_once("blog_main.php");
 
-$idd = $_GET['id'];
-echo $idd;
+if(isset($_GET['id'], $_GET['title'], $_GET['category'],$_POST['content']))
+{
+$id = $_GET['id'];
+$title = $_GET['title'];
+$category = $_GET['category'];
+$contents = $_POST['content'];
 
-if(isset($_POST['title'], $_POST['content'], $_POST['category']))
+echo $contents;
+}
+
+
+/*if(isset($_POST['title'], $_POST['content'], $_POST['category']))
 {
 
 	$title = $_POST['title'];
@@ -36,6 +44,8 @@ if(isset($_POST['title'], $_POST['content'], $_POST['category']))
 		update_post($_GET['id'],$title,$content,$category);
 	}
 }
+*/
+
 
 
 ?>
@@ -57,9 +67,13 @@ if(isset($_POST['title'], $_POST['content'], $_POST['category']))
 	<h1 align="center"><u>Edit Your Post</u></h1>
 	<div class="container">
 		<form role="form" action="edit_post.php" method="post">
+		<div class="form-group">
+				<label for="usr">ID</label>
+				<input type="text" name="id" class="form-control" id = "usr" value="<?php if(isset($_GET['id'])) echo $_GET['id']; ?>" disabled>
+			</div>
 			<div class="form-group">
 				<label for="usr">Title</label>
-				<input type="text" name="title" class="form-control" id = "usr">
+				<input type="text" name="title" class="form-control" id = "usr" value="<?php if(isset($_GET['title'])) echo $_GET['title']; ?>" disabled>
 			</div>
 			<div class="form-group">
 				<label for="comment">Content</label>
@@ -67,9 +81,9 @@ if(isset($_POST['title'], $_POST['content'], $_POST['category']))
 			</div>
 			<div class="form-group">
 				<label for ="usr">Category</label>
-				<input type="text" name="category" id = "usr" class="form-control">
+				<input type="text" name="category" id = "usr" class="form-control" value="<?php if(isset($_GET['category'])) echo $_GET['category']; ?>" disabled>
 			</div>
-			<button type="submit" class="btn btn-default">Submit</button>
+			<button type="submit" class="btn btn-default" name="submit">Submit</button>
 		</form>
 	</body>
 	</html>
